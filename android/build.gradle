@@ -25,6 +25,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
+    namespace 'ru.innim.flutter_login_vk'
+    
     compileSdkVersion 31
 
     sourceSets {
