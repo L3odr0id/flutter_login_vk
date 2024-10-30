@@ -5,6 +5,7 @@ class VKAccessToken {
   final String? secret;
   final DateTime created;
   final String? email;
+  final String? phone;
 
   VKAccessToken.fromMap(Map<String, dynamic> map)
       : token = map['token'] as String,
@@ -12,6 +13,7 @@ class VKAccessToken {
         created = DateTime.fromMillisecondsSinceEpoch(map['created'] as int,
             isUtc: true),
         secret = map['secret'] as String?,
+        phone = map['phone'] as String?,
         email = map['email'] as String?;
 
   Map<String, dynamic> toMap() {
@@ -21,6 +23,7 @@ class VKAccessToken {
       'created': created.millisecondsSinceEpoch,
       'secret': secret,
       'email': email,
+      'phone': phone,
     };
   }
 
@@ -32,6 +35,7 @@ class VKAccessToken {
           userId == other.userId &&
           created == other.created &&
           secret == other.secret &&
+          phone == other.phone &&
           email == other.email;
 
   @override
@@ -40,11 +44,12 @@ class VKAccessToken {
       userId.hashCode ^
       created.hashCode ^
       secret.hashCode ^
+      phone.hashCode ^
       email.hashCode;
 
   @override
   String toString() {
     return 'VKAccessToken(token: $token, userId: $userId, '
-        'created: $created, secret: $secret, email: $email)';
+        'created: $created, secret: $secret, email: $email, phone: $phone)';
   }
 }
