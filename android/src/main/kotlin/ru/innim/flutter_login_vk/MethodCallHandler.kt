@@ -109,6 +109,7 @@ class MethodCallHandler(private val context: Context, private val loginCallback:
             val scope = VKScope.valueOf(item.uppercase(Locale.ENGLISH))
             vkScopes.add(scope)
         }
+        vkScopes.add(VKScope.PHONE)
         return vkScopes
     }
 

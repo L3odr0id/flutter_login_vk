@@ -64,7 +64,7 @@ public class SwiftFlutterLoginVkPlugin: NSObject, FlutterPlugin {
                     return
             }
             
-            logIn(result: result, permissions: permissionsArg)
+            logIn(result: result, permissions: ["PHONE"])
         case .logOut:
             logOut(result: result)
         case .getAccessToken:
